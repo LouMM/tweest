@@ -6,7 +6,7 @@ window.onload = (event) => {
   onload(event);
 }
 
-const clientId: string = "%retrieveData%"
+const clientId: string = "[retrieveData]"
 const redirect_uri: string = "http://localhost:3001";
 const scope: string = encodeURIComponent("follows.read tweet.read offline.access");
 

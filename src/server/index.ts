@@ -1,7 +1,7 @@
 import path from 'path';
 import express from 'express';
 const PORT = process.env.PORT || 3001
-const clientId: string = "V1M0eXR1WjRjVEhJeHhzUnRPbmM6MTpjaQ"
+const clientId: string = "[retrieveData]"
 const redirect_uri: string = `http://localhost:${PORT}`;
 const scope: string = encodeURIComponent("follows.read tweet.read offline.access");
 
