@@ -6,7 +6,7 @@ window.onload = (event) => {
   onload(event);
 }
 
-const clientId: string = "V1M0eXR1WjRjVEhJeHhzUnRPbmM6MTpjaQ"
+const clientId: string = "%retrieveData%"
 const redirect_uri: string = "http://localhost:3001";
 const scope: string = encodeURIComponent("follows.read tweet.read offline.access");
 
@@ -19,8 +19,6 @@ const randomState = String.fromCharCode.apply(null, statearray);
 const state: string = randomState;
 const authorizeUrl: string = `https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirect_uri}&scope=${scope}&state=${state}&code_challenge=challenge&code_challenge_method=plain`;
 
-//https://twitter.com/i/oauth2/authorize?response_type=code&client_id=V1M0eXR1WjRjVEhJeHhzUnRPbmM6MTpjaQ&redirect_uri=http://localhost:3001&scope=follows.read%20tweet.read&state=state&code_challenge=challenge&code_challenge_method=plain
-//https://twitter.com/i/oauth2/authorize?response_type=code&client_id=V1M0eXR1WjRjVEhJeHhzUnRPbmM6MTpjaQ&redirect_uri=http://localhost:3001&scope=follows.read%20tweet.read&state=J1y015RCkJxGz7qBpSwHRKR6jOPzyRnQz6Ci032G&code_challenge=challenge&code_challenge_method=plain
 export class App extends React.Component<Page, {}> {
 
   render() {
@@ -39,8 +37,6 @@ export class App extends React.Component<Page, {}> {
 async function onload(ev: Event) {
   // Extract Authorization Code
   // Get Access Token
-  //http://[site]/?error=access_denied&state=XeuReKAaRAkOoVWO8DVSz3LfeRjivkwFQGhMOIgi
-  //http://localhost:3001/?state=fx6NzqkxpOgcS20J2ccR5zrBli44uxGrWJiCwMh3&code=UktuR3IwRk5MTk5UbW9RZ0ZHcDJTNGZvZFBvRE50bC1uU3BLd05vRFB2a1FZOjE2Njk0MzY0NzIzMjc6MToxOmFjOjE
   console.log("in onload function");
   const url = new URL(window.location.href);
   let code = url.searchParams.get('code');
